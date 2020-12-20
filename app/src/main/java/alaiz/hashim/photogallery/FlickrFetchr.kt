@@ -22,7 +22,7 @@ class FlickrFetchr {
     }
     fun fetchContents(): LiveData<String> {
         val responseLiveData: MutableLiveData<String> = MutableLiveData()
-        val flickrRequest: Call<String> = flickrApi.fetchContents()
+        val flickrRequest: Call<String> = flickrApi.fetchPhotos()
         flickrRequest.enqueue(object : Callback<String> {
             override fun onFailure(call: Call<String>, t: Throwable) {
                 Log.e(TAG, "Failed to fetch photos", t)
@@ -34,7 +34,7 @@ class FlickrFetchr {
                 Log.d(TAG, "Response received")
                 responseLiveData.value = response.body()
             }
-        })return responseLiveData
+        })
+        return responseLiveData
     }
-}
 }
