@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -45,6 +46,10 @@ class PhotoGalleryFragment : Fragment() {
                 Log.d(TAG, "Have gallery items from ViewModel $galleryItems")
                 // Eventually, update data backing the recycler view
             })
+    }
+    private class PhotoHolder(itemTextView: TextView)
+        : RecyclerView.ViewHolder(itemTextView) {
+        val bindTitle: (CharSequence) -> Unit = itemTextView::setText
     }
 
     companion object {
