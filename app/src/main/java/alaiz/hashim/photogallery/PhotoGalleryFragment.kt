@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
@@ -23,6 +24,7 @@ class PhotoGalleryFragment : Fragment() {
             .addConverterFactory(ScalarsConverterFactory.create())
             .build()
         val flickrApi: FlickrApi = retrofit.create(FlickrApi::class.java)
+        val flickrHomePageRequest: Call<String> = flickrApi.fetchContents()
 
     }
 
