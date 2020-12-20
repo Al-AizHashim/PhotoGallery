@@ -15,12 +15,12 @@ class FlickrFetchr {
     private val flickrApi: FlickrApi
     init {
         val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl("https://www.flickr.com/")
+            .baseUrl("https://api.flickr.com/")
             .addConverterFactory(ScalarsConverterFactory.create())
             .build()
         flickrApi = retrofit.create(FlickrApi::class.java)
     }
-    fun fetchContents(): LiveData<String> {
+    fun fetchPhotos(): LiveData<String> {
         val responseLiveData: MutableLiveData<String> = MutableLiveData()
         val flickrRequest: Call<String> = flickrApi.fetchPhotos()
         flickrRequest.enqueue(object : Callback<String> {
