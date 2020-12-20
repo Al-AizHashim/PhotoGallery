@@ -1,5 +1,6 @@
-package alaiz.hashim.photogallery
+package alaiz.hashim.photogallery.api
 
+import alaiz.hashim.photogallery.GalleryItem
 import com.google.gson.annotations.SerializedName
 
 class PhotoResponse {

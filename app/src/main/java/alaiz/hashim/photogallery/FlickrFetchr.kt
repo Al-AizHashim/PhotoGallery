@@ -1,6 +1,8 @@
 package alaiz.hashim.photogallery
 
 import alaiz.hashim.photogallery.api.FlickrApi
+import alaiz.hashim.photogallery.api.FlickrResponse
+import alaiz.hashim.photogallery.api.PhotoResponse
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
